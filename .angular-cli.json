@@ -6,10 +6,12 @@
   "apps": [
     {
       "root": "src",
+      "exclude":["sw.js"],
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "sw.js"
       ],
       "index": "index.html",
       "main": "main.ts",
