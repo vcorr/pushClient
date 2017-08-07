@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {AngularFireModule} from 'angularfire2';
 import {environment} from '../environments/environment';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MdButtonModule, MdToolbarModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -11,7 +13,10 @@ import {environment} from '../environments/environment';
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    BrowserAnimationsModule,
+    MdToolbarModule,
+    MdButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
