@@ -1,6 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <md-toolbar color="primary">Push client</md-toolbar>
-<div style="margin-top:90px; text-align: center; display: flex; flex-direction: column; align-items: center; align-content: center; justify-content: center">
-  You are currently not registered for receiving push messages. Press button to register and allow push messages from the dialog that appears.
-<button md-button style="margin-top: 20px;background-color: #673ab7; color: rgba(255, 255, 255, 0.87) ">REGISTER</button>
+
+<div
+  style="margin-top:90px; text-align: center; display: flex; flex-direction: column; align-items: center; align-content: center; justify-content: center">
+
+  <div [ngSwitch]="notificationStatus">
+    <div *ngSwitchCase="'granted'">
+      You have granted push notfications! Great!
+    </div>
+    <div *ngSwitchCase="'denied'">
+      You have denied push notifications! If you want to allow them, you need to clear the setting from your browser's
+      settings
+    </div>
+    <div *ngSwitchCase="'default'">
+      Would you like to receive push notifications?
+      <button md-button style="margin-top: 20px;background-color: #673ab7; color: rgba(255, 255, 255, 0.87) "
+              (click)="registerForPush()">YES
+      </button>
+    </div>
+  </div>
 </div>
